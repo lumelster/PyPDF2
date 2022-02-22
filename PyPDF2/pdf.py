@@ -1739,7 +1739,7 @@ class PdfFileReader(object):
         return out
 
     def cacheIndirectObject(self, generation, idnum, obj):
-        # return None # Sometimes we want to turn off cache for debugging.
+        return None # Sometimes we want to turn off cache for debugging.
         if (generation, idnum) in self.resolvedObjects:
             msg = "Overwriting cache for %s %s"%(generation, idnum)
             if self.strict: raise utils.PdfReadError(msg)
